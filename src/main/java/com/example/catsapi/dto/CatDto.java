@@ -1,11 +1,14 @@
 package com.example.catsapi.dto;
 
+import lombok.AccessLevel;
 import lombok.Data;
+import lombok.experimental.FieldDefaults;
 
 import java.time.LocalDate;
 
 @Data
+@FieldDefaults(level = AccessLevel.PRIVATE)
 public class CatDto {
-    private String name;
-    private LocalDate birthDay;
+    String name;
+    LocalDate birthDay;
 }

@@ -8,10 +8,11 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/cats")
+@FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
 @RequiredArgsConstructor
 public class CatController {
 
-    private final CatService service;
+    CatService service;
 
     @PostMapping
     public Cat save(@RequestBody CatDto cat) {
